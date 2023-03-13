@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>ACCESS CONTROL</title>
+</head>
+<body>
+    <form action="{% url 'cadastro' %}" method="POST">
+        {% csrf_token %}
+    <div class="main-login">
+            <div class="login">
+                <h1 class="left-login">ACCESS CONTROL</h1>
+                <br><br>
+                <div class="card-login">
+                    <h1>LOGIN</h1>
+                    <div class="textfield-login">
+                        <label for="usuario" id="box">Usuário</label>
+                        <input type="text" name="username" placeholder="Digite seu usuário">
+                    </div>
+                    <div class="textfield-login">
+                        <label for="senha" id="box">Senha</label>
+                        <input type="password" name="senha" placeholder="Digite sua senha">
+                    </div>
+                    <input type="submit" value="cadastrar" class="btn-login"></input>
+                </div>
+            </div>
+    </div>
+    </form>
+</body>
+</html>
